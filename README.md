@@ -77,17 +77,11 @@ Output:
 
 
 # Question 2: 
-Write a SQL query to Select all patients who were admitted for one day. 
-name                  type 
---------------------  ---------- 
-patient_id            INT 
-first_name            VARCHAR(50) 
-last_name             VARCHAR(50) 
-date_of_birth         DATE 
-admission_date        DATE 
-discharge_date        DATE 
-doctor_id             INT 
- 
+
+Write a SQL query to Select all patients who were admitted for one day.
+
+![image](https://github.com/user-attachments/assets/204d3791-364b-41fc-9551-621a0ecee000)
+
 Answer: 
 SELECT patient_id,first_name,admission_date,discharge_date FROM Patients 
 WHERE admission_date==discharge_date; 
@@ -100,15 +94,8 @@ Output:
 Write a SQL query to classify value2 in the Calculations table as 'Small', 'Medium', or 'Large' 
 based on whether it is less than 10, between 10 and 50, or greater than 50, respectively. 
  
-cid         name        type        notnull     dflt_value  pk
-----------  ----------  ----------  ----------  ----------  ---------- 
-0           id          INTEGER     0                       1 
-1           value1      REAL        0                       0 
-2           value2      REAL        0                       0 
-3           base        INTEGER     0                       0 
-4           exponent    INTEGER     0                       0 
-5           number      REAL        0                       0 
-6           decimal     REAL        0                       0 
+![image](https://github.com/user-attachments/assets/2c141c37-0e0b-43ee-9f57-e6938de84f7f)
+
  
 Answer: 
 SELECT id,value2,  
@@ -128,11 +115,8 @@ Write a SQL query to find all those customers who does not have any grade. Retur
 cust_name, city, grade, salesman_id. 
 Sample table: customer 
 
-customer_id |   cust_name    |    city    | grade | salesman_id  
--------------+----------------+------------+-------+------------- 
-3002         | Nick Rimando   | New York   |   100 |        5001 
-3007         | Brad Davis     | New York   |   200 |        5001 
-3005         | Graham Zusi    | California |   200 |        5002 
+![image](https://github.com/user-attachments/assets/71960b92-7de6-4d86-90d4-a9b0384fdb09)
+
  
 Answer: 
 SELECT customer_id, cust_name, city, grade, salesman_id 
@@ -149,12 +133,8 @@ Write a SQL query to find customers who are either from the city 'New York' or w
 a grade greater than 100. Return customer_id, cust_name, city, grade, and salesman_id. 
 Sample table: customer 
 
- customer_id |   cust_name    |    city    | grade | salesman_id  
- -------------+----------------+------------+-------+------------- 
-3002         | Nick Rimando   | New York   |   100 |        5001 
-3007         | Brad Davis     | New York   |   200 |        5001 
-3005         | Graham Zusi    | California |   200 |        5003 
- 
+![image](https://github.com/user-attachments/assets/d179f52b-a399-461c-9be7-36fd9ad5bf6e)
+
 Answer: 
 SELECT customer_id, cust_name, city, grade, salesman_id 
 FROM customer 
@@ -169,11 +149,9 @@ Output:
 Write a SQL query to identify products where the discount amount is greater than $50. Return 
 product_id, original_price, discount_percentage, and discount_amount. 
 Sample table: products 
-product_id | original_price | discount_percentage  ------------+----------------+---------------------  
-101 | 100.00 | 0.60  
-102 | 150.00 | 0.40  
-103 | 200.00 | 0.10 
- 
+
+![image](https://github.com/user-attachments/assets/aa192d08-0494-4638-abee-e46faab6aa1d)
+
 Answer: 
 SELECT product_id, original_price,discount_percentage,original_price * discount_percentage 
 AS discount_amount FROM products 
@@ -189,11 +167,9 @@ Output:
 Write a SQL query to calculate the original price using the discount percentage and the given 
 discounted price. Return product_id, discounted_price, discount_percentage, and original_price. 
 Sample table: Products 
-product_id | discounted_price | discount_percentage 
- ------------+------------------+--------------------- 
- 101 | 45.00 | 0.10  
-102 | 63.75 | 0.15  
-103 | 80.00 | 0.20 
+
+![image](https://github.com/user-attachments/assets/5a3521b6-4f04-4da6-91a2-04ad1c70fdb4)
+
  
 Answer: 
 SELECT product_id,discounted_price,discount_percentage, discounted_price/(1
@@ -207,16 +183,9 @@ Output:
 Write a SQL query to find all employees along with the day of the week on which they were 
 hired from the emp table 
 emp table 
-cid         name        type         
-----------  ----------  ----------  
-0           empno       INT          
-1           ename       VARCHAR(100) 
-2           job         VARCHAR(50) 
-3           mgr         INT         
-4           hiredate    DATE         
-5           sal         DECIMAL(10,2)   
-6           comm        DECIMAL(10,2)   
-7           deptno      INT     
+
+![image](https://github.com/user-attachments/assets/52c9239b-6a60-4da2-8d5b-9a65949bf642)
+ 
  
 Answer: 
 SELECT ename,hiredate, 
@@ -239,17 +208,9 @@ Output:
 Write a SQL query to find all employees who were hired on a weekend (Saturday or Sunday) 
 from the emp table 
 emp table 
-cid         name        type         
-----------  ----------  ----------  
-0           empno       INT          
-1           ename       VARCHAR(100) 
-2           job         VARCHAR(50) 
-3           mgr         INT         
-4           hiredate    DATE         
-5           sal         DECIMAL(10,2)   
-6           comm        DECIMAL(10,2)   
-7           deptno      INT          
- 
+
+![image](https://github.com/user-attachments/assets/07ace31a-3780-4192-a049-e580b645c1db)
+
 Answer: 
 SELECT ename,hiredate, 
 CASE strftime('%w',hiredate) 
@@ -268,17 +229,8 @@ Write a SQL query to Concatenate the first three characters of the employee's na
 three characters of their job title. 
 Table name: emp 
 
-name        type 
-----------  ---------- 
-empno       INT 
-ename       VARCHAR(100) 
-job         VARCHAR(50) 
-mgr         INT 
-hiredate    DATE 
-sal         DECIMAL(10,2) 
-comm        DECIMAL(10,2) 
-deptno      INT 
- 
+![image](https://github.com/user-attachments/assets/13493d06-44f8-4b97-952b-c3d416fcbe2d)
+
 Answer: 
 SELECT ename,job,substr(ename,1,3) || substr(job,-3) 
 AS ConcatenatedString FROM emp; 
@@ -289,7 +241,3 @@ Output:
 # Result 
 Thus , the SQL queries to implement DML commands have been executed successfully. 
  
- 
- 
-# Result 
-Thus , the SQL queries to implement DML commands have been executed successfully.
