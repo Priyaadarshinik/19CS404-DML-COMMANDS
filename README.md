@@ -98,6 +98,7 @@ based on whether it is less than 10, between 10 and 50, or greater than 50, resp
 
  
 Answer: 
+
 SELECT id,value2,  
 CASE WHEN value2<10 
 THEN 'Small' 
@@ -107,6 +108,7 @@ END AS size_category
 FROM Calculations; 
  
 Output: 
+
 ![image](https://github.com/user-attachments/assets/e2e740d9-3bf1-456b-ada7-b041220517ac)
 
  
