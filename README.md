@@ -121,11 +121,13 @@ Sample table: customer
 
  
 Answer: 
+
 SELECT customer_id, cust_name, city, grade, salesman_id 
 FROM customer WHERE grade IS NULL; 
 
  
 Output: 
+
 ![image](https://github.com/user-attachments/assets/763100c2-9976-4b9b-80c0-b208f2d8bac4)
 
  
@@ -138,11 +140,13 @@ Sample table: customer
 ![image](https://github.com/user-attachments/assets/d179f52b-a399-461c-9be7-36fd9ad5bf6e)
 
 Answer: 
+
 SELECT customer_id, cust_name, city, grade, salesman_id 
 FROM customer 
 WHERE city = 'New York' OR grade <=100; 
 
 Output: 
+
 ![image](https://github.com/user-attachments/assets/49ce34a8-d8d3-4915-b020-db3f03c46113)
 
  
@@ -155,15 +159,16 @@ Sample table: products
 ![image](https://github.com/user-attachments/assets/aa192d08-0494-4638-abee-e46faab6aa1d)
 
 Answer: 
+
 SELECT product_id, original_price,discount_percentage,original_price * discount_percentage 
 AS discount_amount FROM products 
 WHERE original_price * discount_percentage > 50; 
  
  
 Output: 
+
 ![image](https://github.com/user-attachments/assets/8ebfa265-59d4-417c-81cf-51acebc98e14)
 
- 
  
 # Question 7: 
 Write a SQL query to calculate the original price using the discount percentage and the given 
@@ -174,10 +179,12 @@ Sample table: Products
 
  
 Answer: 
+
 SELECT product_id,discounted_price,discount_percentage, discounted_price/(1
 discount_percentage) AS original_price FROM Products; 
  
 Output: 
+
 ![image](https://github.com/user-attachments/assets/7514464f-58a4-4cc9-9bd1-4e0c23fa2889)
 
 
@@ -190,6 +197,7 @@ emp table
  
  
 Answer: 
+
 SELECT ename,hiredate, 
 CASE strftime('%w',hiredate) 
 WHEN '0' THEN 'Sunday' 
@@ -213,7 +221,8 @@ emp table
 
 ![image](https://github.com/user-attachments/assets/07ace31a-3780-4192-a049-e580b645c1db)
 
-Answer: 
+Answer:
+
 SELECT ename,hiredate, 
 CASE strftime('%w',hiredate) 
 WHEN '0' THEN '0' 
@@ -223,6 +232,7 @@ FROM emp
 WHERE strftime('%w',hiredate) IN ('0','6'); 
  
 Output: 
+
 ![image](https://github.com/user-attachments/assets/445d18c2-47a0-42aa-b998-aba90c53c798)
  
  
@@ -234,10 +244,12 @@ Table name: emp
 ![image](https://github.com/user-attachments/assets/13493d06-44f8-4b97-952b-c3d416fcbe2d)
 
 Answer: 
+
 SELECT ename,job,substr(ename,1,3) || substr(job,-3) 
 AS ConcatenatedString FROM emp; 
 
 Output: 
+
 ![image](https://github.com/user-attachments/assets/158d19f7-d7fa-4d1d-b666-b332822375a7)
 
 # Result 
